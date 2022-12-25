@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @ Alaa Elnakeeb
 - 👀 I’m interested in PS as well as i am learning now security
-- 🌱 I’m currently learning in AI college
+- 🌱 I’m currently learning in Artificial intelligence kfs university
 - 📫 How to reach me  in alaaelnakeeb81@gmail.com
 
 <!---
