@@ -19,3 +19,8 @@ The experimental results show that the SVM model and LR have the best results co
 to other machine learning models with an accuracy of 98.246%, and with FS. To achieve the best performance, voting 
 ensemble ML model developed based on RF, SVM and LR. Ensemble models achieve superior performance over other 
 traditional ML and over the state of the art .
+
+our team:
+1-Nourhan Elsabawy
+2-Mohamed baher2
+3-AlaaElnakeeb81536
