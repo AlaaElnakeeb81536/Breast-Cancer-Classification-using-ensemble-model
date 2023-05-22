@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Breast Cancer Disease Prediction</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f2f2f2;
+      }
+      
+      h1 {
+        color: #1e90ff;
+        text-align: center;
+        text-shadow: 2px 2px #333333;
+        font-size: 48px;
+        transition: color 0.5s ease;
+        cursor: pointer;
+      }
+      
+      h1:hover {
+        color: #ff69b4;
+      }
+      
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px #cccccc;
+        transition: transform 0.5s ease;
+      }
+      
+      form:hover {
+        transform: scale(1.02);
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #333333;
+      }
+      
+      input[type="number"], select, input[type="text"] {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #cccccc;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #333333;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transition: border-color 0.5s ease;
+      }
+      
+      input[type="number"]:focus, select:focus, input[type="text"]:focus {
+        border-color: #1e90ff;
+      }
+      
+      input[type="radio"] {
+        margin-right: 10px;
+      }
+      
+      input[type="submit"] {
+        background-color: #1e90ff;
+        color: #ffffff;
+        border: 0;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #0077b6;
+      }
+      
+      .error-message {
+        color: #1e90ff;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Breast Cancer Disease Prediction</h1>
+    <form id="breast-cancer-form" action="/predict" method="post">
+      <label for="radius-mean">Radius Mean:</label>
+      <input type="number" id="radius-mean" name="radius-mean" step="any" required>
+      
+      <label for="texture-mean">Texture Mean:</label>
+      <input type="number" id="texture-mean" name="texture-mean" step="any" required>
+      
+      <label for="perimeter-mean">Perimeter Mean:</label>
+      <input type="number" id="perimeter-mean" name="perimeter-mean" step="any" required>
+      
+      <label for="area-mean">Area Mean:</label>
+      <input type="number" id="area-mean" name="area-mean" step="any" required>
+      
+      <label for="smoothness-mean">Smoothness Mean:</label>
+      <input type="number" id="smoothness-mean" name="smoothness-mean" step="any" required>
+      
+      <label for="compactness-mean">Compactness Mean:</label>
+      <input type="number" id="compactness-mean" name="compactness-mean" step="any" required>
+      
+      <label for="concavity-mean">Concavity Mean:</label>
+      <input type="number" id="concavity-mean" name="concavity-mean" step="any" required>
+      
+      <label for="concave-points-mean">Concave Points Mean:</label>
+      <input type="number" id="concave-points-mean" name="concave-points-mean" step="any" required>
+      
+      <label for="symmetry-mean">Symmetry Mean:</label>
+      <input type="number" id="symmetry-mean" name="symmetry-mean" step="any" required>
+      
+      <label for="fractal-dimension-mean">Fractal Dimension Mean:</label>
+      <input type="number" id="fractal-dimension-mean" name="fractal-dimension-mean" step="any" required>
+      
+      <label for="radius-se">Radius SE:</label>
+      <input type="number" id="radius-se" name="radius-se" step="any" required>
+      
+      <label for="texture-se">Texture SE:</label>
+      <input type="number" id="texture-se" name="texture-se" step="any" required>
+      
+      <label for="perimeter-se">Perimeter SE:</label>
+      <input type="number" id="perimeter-se" name="perimeter-se" step="any" required>
+      
+      <label for="area-se">Area SE:</label>
+      <input type="number" id="area-se" name="area-se" step="any" required>
+      
+      <label for="smoothness-se">Smoothness SE:</label>
+      <input type="number" id="smoothness-se" name="smoothness-se" step="any" required>
+      
+      <label for="compactness-se">Compactness SE:</label>
+      <input type="number" id="compactness-se" name="compactness-se" step="any" required>
+      
+      <label for="concavity-se">Concavity SE:</label>
+      <input type="number" id="concavity-se" name="concavity-se" step="any" required>
+      
+      <label for="concave-points-se">Concave Points SE:</label>
+      <input type="number" id="concave-points-se" name="concave-points-se" step="any" required>
+      
+      <label for="symmetry-se">Symmetry SE:</label>
+      <input type="number" id="symmetry-se" name="symmetry-se" step="any" required>
+      
+      <label for="fractal-dimension-se">Fractal Dimension SE:</label>
+      <input type="number" id="fractal-dimension-se" name="fractal-dimension-se" step="any" required>
+      
+      <label for="radius-worst">Radius Worst:</label>
+      <input type="number" id="radius-worst" name="radius-worst" step="any" required>
+      
+      <label for="texture-worst">Texture Worst:</label>
+      <input type="number" id="texture-worst" name="texture-worst" step="any" required>
+      
+      <label for="perimeter-worst">Perimeter Worst:</label>
+      <input type="number" id="perimeter-worst" name="perimeter-worst" step="any" required>
+      
+      <label for="area-worst">Area Worst:</label>
+      <input type="number" id="area-worst" name="area-worst" step="any" required>
+      
+      <label for="smoothness-worst">Smoothness Worst:</label>
+      <input type="number" id="smoothness-worst" name="smoothness-worst" step="any" required>
+      
+      <label for="compactness-worst">Compactness Worst:</label>
+      <input type="number" id="compactness-worst" name="compactness-worst" step="any" required>
+      
+      <label for="concavity-worst">Concavity Worst:</label>
+      <input type="number" id="concavity-worst" name="concavity-worst" step="any" required>
+      
+      <label for="concave-points-worst">Concave Points Worst:</label>
+      <input type="number" id="concave-points-worst" name="concave-points-worst" step="any" required>
+      
+      <label for="symmetry-worst">Symmetry Worst:</label>
+      <input type="number" id="symmetry-worst" name="symmetry-worst" step="any" required>
+      
+      <label for="fractal-dimension-worst">Fractal Dimension Worst:</label>
+      <input type="number" id="fractal-dimension-worst" name="fractal-dimension-worst" step="any" required>
+      
+      <input type="submit" value="Predict">
+      <br>
+      <label>Result:</label>
+      <p> <h3 style="text-align: center; ">{{prediction_text}}</h3> </p>
+    </form>
+    
+  </body>
+</html>
