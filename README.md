@@ -13,7 +13,9 @@ machine learning models are explored, including Support Vector Machine (SVM), Ra
 neighbor (KNN), Logistic Regression (LR), Naive Bayes (NB), and Decision Tree (DT). To evaluate the performance, 
 accuracy, F1-score, recall, and precision were computed to evaluate the performance of the classification models 
 . The performance of the six machine learning models was tested on the test dataset before and after the 
-process of the FS technique. The experimental results show that the SVM model and LR have the best results compared 
+process of the FS technique.
+
+The experimental results show that the SVM model and LR have the best results compared 
 to other machine learning models with an accuracy of 98.246%, and with FS. To achieve the best performance, voting 
 ensemble ML model developed based on RF, SVM and LR. Ensemble models achieve superior performance over other 
 traditional ML and over the state of the art .
