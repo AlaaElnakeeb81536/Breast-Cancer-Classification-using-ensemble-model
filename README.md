@@ -15,12 +15,7 @@ accuracy, F1-score, recall, and precision were computed to evaluate the performa
 . The performance of the six machine learning models was tested on the test dataset before and after the 
 process of the FS technique.
 
-The experimental results show that the SVM model and LR have the best results compared 
+The experimental results show that the **SVM model and LR have the best results compared 
 to other machine learning models with an accuracy of 98.246%, and with FS. To achieve the best performance, voting 
 ensemble ML model developed based on RF, SVM and LR. Ensemble models achieve superior performance over other 
-traditional ML and over the state of the art .
-
-our team:
-1-Nourhan Elsabawy
-2-Mohamed baher2
-3-AlaaElnakeeb81536
+traditional ML and over the state of the art** .
